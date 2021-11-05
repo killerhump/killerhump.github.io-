@@ -12,28 +12,7 @@
  -->
 
 <button class="playWAV">Play WAV</button>
-<button class="playMP3">Play MP3</button>
-
-<script>
-/**********************
-******** AUDIO ********
-**********************/
-
-// load and play a sound.
-function playSound(path) {
-  // audio supported?
-  if (typeof window.Audio === 'function') {
-    var audioElem = new Audio();
-    audioElem.src = path;
-    audioElem.play();
-  }
-}
-
-// event listeners
-document.querySelector('.playWAV').addEventListener('click', function(){
-  playSound('smb_gameover.wav');
-});
-document.querySelector('.playMP3').addEventListener('click', function(){
+playMP3').addEventListener('click', function(){
   playSound('music.mp3');
 });
 </script>
