@@ -1,47 +1,42 @@
-<!DOCTYPE html>
-<html >
-  <head>
-    <meta charset="UTF-8">
-    <title>Audio player HTML5</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>audio test</title>
+</head>
+<body>
+<!--   <audio controls="controls" autoplay>
+  Your browser does not support the <code>audio</code> element.
+  <source src="smb_gameover.wav" type="audio/wav">
+</audio>
+ -->
 
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <link rel="stylesheet" href="css/AudioPlayer.css">
-    <style>
+<button class="playWAV">Play WAV</button>
+<button class="playMP3">Play MP3</button>
 
-    #player{
-        position: relative;
-        max-width: 700px;
-        height: 500px;
-        border: solid 1px gray;
-    }
-    </style>
-  </head>
+<script>
+/**********************
+******** AUDIO ********
+**********************/
 
-  <body>
-      <!-- Audio player container-->
-     <div id='player'></div>
+// load and play a sound.
+function playSound(path) {
+  // audio supported?
+  if (typeof window.Audio === 'function') {
+    var audioElem = new Audio();
+    audioElem.src = path;
+    audioElem.play();
+  }
+}
 
-    <!-- Audio player js begin-->
-    <script src="js/AudioPlayer.js"></script>
+// event listeners
+document.querySelector('.playWAV').addEventListener('click', function(){
+  playSound('smb_gameover.wav');
+});
+document.querySelector('.playMP3').addEventListener('click', function(){
+  playSound('music.mp3');
+});
+</script>
 
-    <script>
-        // test image for web notifications
-        var iconImage = null;
-
-        AP.init({
-            container:'#player',//a string containing one CSS selector
-            volume   : 0.7,
-            autoPlay : true,
-            notification: false,
-            playList: [
-                {'icon': iconImage, 'title': 'Faded Kneesocks', 'file': 'mp3/Faded-Kneesocks.mp3'},
-                {'icon': iconImage, 'title': 'Let It Go', 'file': 'mp3/let-it-go.mp3'},
-                {'icon': iconImage, 'title': 'Let It fuck', 'file': 'mp3/let-it-fuck.mp3'}
-          ]
-        });
-    </script>
-    <!-- Audio player js end-->
-
-  </body>
+ </body>
 </html>
