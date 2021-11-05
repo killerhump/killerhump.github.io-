@@ -35,8 +35,8 @@
             autoPlay : true,
             notification: false,
             playList: [
-                {'icon': iconImage, 'title': 'Try Everything', 'file': 'mp3/try-everything.mp3'},
-                {'icon': iconImage, 'title': 'Let It Go', 'file': 'mp3/let-it-go.mp3'}
+                {'icon': iconImage, 'title': 'Faded Kneesocks', 'file': 'mp3/Faded-Kneesocks.mp3'},
+                {'icon': iconImage, 'title': 'Seinfeld Theme', 'file': 'mp3/Seinfeld-Theme.mp3'}
           ]
         });
     </script>
